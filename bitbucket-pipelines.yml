@@ -37,7 +37,7 @@ pipelines:
             # docker
             - export BUILD_ID=$BITBUCKET_BRANCH_$BITBUCKET_COMMIT_$BITBUCKET_BUILD_NUMBER
             - export IMAGE_NAME=$AWS_REGISTRY_URL/$ECS_CLUSTER_NAME:$BUILD_ID
-            - docker build -t $AWS_REGISTRY_URL/$ECS_CLUSTER:BUILD_ID -t $AWS_REGISTRY_URL/$ECS_CLUSTER_NAME:latest .
+            - docker build -t $AWS_REGISTRY_URL/$ECS_CLUSTER_NAME:BUILD_ID -t $AWS_REGISTRY_URL/$ECS_CLUSTER_NAME:latest .
             - docker push -a $AWS_REGISTRY_URL/$ECS_CLUSTER_NAME
             # docker tag $IMAGE_NAME $AWS_REGISTRY_URL:$ECS_CLUSTER_NAME-v$BUILD_ID
             # docker push $AWS_REGISTRY_URL:$ECS_CLUSTER_NAME-v$BUILD_ID
