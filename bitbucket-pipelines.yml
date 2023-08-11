@@ -42,7 +42,7 @@ pipelines:
           name: Deploy
           image: ubuntu:18.04
           script:
-            - grep -rhE ^deb /etc/apt/sources.list* | grep "cloud-sdk"
+            - echo "deb [signed-by=/etc/apt/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
             - apt-get update && apt-get install -y kubectl
          
 definitions:
