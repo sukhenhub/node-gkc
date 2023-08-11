@@ -9,7 +9,7 @@ pipelines:
   branches:
     master:
       - step:
-          name: Build and test
+          name: Code Testing
           image: node:16.16.0
           script:
             - npm install --legacy-peer-deps
@@ -42,9 +42,8 @@ pipelines:
           name: Deploy
           image: ubuntu:18.04
           script:
-            - apt-get update -y && apt-get install -y kubectl
-            - kubectl version --short --client
-
+            - grep -rhE ^deb /etc/apt/sources.list* | grep "cloud-sdk"
+            - apt-get update && apt-get install -y kubectl
          
 definitions:
   services:
