@@ -42,8 +42,7 @@ pipelines:
           name: Deploy
           image: ubuntu:18.04
           script:
-            - echo "deb [signed-by=/etc/apt/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | tee /etc/apt/sources.list.d/kubernetes.list
-            - apt-get update && apt-get install -y kubectl curl
+            - apt-get update && apt install curl -y
             - curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
             - chmod +x kubectl
             - mv kubectl /usr/local/bin
