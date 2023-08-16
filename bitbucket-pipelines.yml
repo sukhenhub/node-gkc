@@ -44,6 +44,7 @@ pipelines:
           script:
             - pipe: atlassian/kubectl-run:3.7.0
               variables:
+                KUBE_CONFIG: $KUBE_CONFIG
                 KEY_FILE: $KEY_FILE
                 PROJECT: 'sukhengks'
                 COMPUTE_ZONE: 'us-central1-c'
