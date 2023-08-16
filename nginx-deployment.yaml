@@ -16,6 +16,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:1.14.2
+        image: 874049927853.dkr.ecr.ap-south-1.amazonaws.com/node-pipeline:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
