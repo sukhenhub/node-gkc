@@ -49,8 +49,7 @@ pipelines:
                 PROJECT: 'sukhengks'
                 COMPUTE_ZONE: 'us-central1-c'
                 CLUSTER_NAME: 'demo-gks'
-                KUBECTL_COMMAND: 'apply'
-                RESOURCE_PATH:  'nginx-deployment.yaml'  
+            - helm install ./chart
 definitions:
   services:
     docker:
